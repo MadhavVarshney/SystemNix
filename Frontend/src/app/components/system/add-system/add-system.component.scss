@@ -1,0 +1,21 @@
+// .photoInput{
+//   width: 30%;
+// }
+
+.photoInputDiv{
+  border: 1px dashed black;
+  padding: 10px;
+  width: 60%;
+  height: 300px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.photoInputDiv div{
+  width: 100%;
+}
+
+.cardHeader{
+  max-height: 50px;
+}

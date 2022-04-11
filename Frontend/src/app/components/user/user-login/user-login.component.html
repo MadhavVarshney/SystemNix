@@ -1,0 +1,48 @@
+
+<div class="container p-5">
+  <div class=" card">
+    <div class="card-header">
+      Login
+    </div>
+    <div class="card-body">
+      <form [formGroup]="userLoginForm">
+        <div class="row mb-4">
+          <div class="col-md-4">
+
+          </div>
+          <div class="form-group col-md-4">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" formControlName="userName" />
+            <span class="validation-error" *ngIf="!userName.valid && (userName.touched || submitted)">
+              Please provide User Name.
+            </span>
+          </div>
+        </div>
+
+        <div class="row mb-4">
+          <div class="col-md-4">
+
+          </div>
+          <div class="form-group col-md-4">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" formControlName="password" />
+            <span class="validation-error" *ngIf="!password.valid && (password.touched || submitted)">
+              <span *ngIf="password.hasError('required')">Please provide Password.</span>
+              <span *ngIf="password.hasError('minlength')">Please provide atleast 5 characters.</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+
+          </div>
+          <div class="form-group col-md-4">
+            <button class="btn btn-primary" style="margin-right: 10px;" [disabled]="!userLoginForm.valid || submitted" (click)="login()">Save</button>
+            <button class="btn btn-danger">Cancel</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

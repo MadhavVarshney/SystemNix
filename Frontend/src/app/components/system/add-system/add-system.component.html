@@ -1,0 +1,266 @@
+<div class="container p-5">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header cardHeader">
+          <h2>Add your computer</h2>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="addSystemForm">
+            <div>
+              <tabset type="pills" #staticTabs>
+                <tab heading="Basic Information" id="tab1" formGroupName="basicInfo">
+
+                  <div class="mb-4 mt-4">
+                    <p>Is your computer</p>
+                    <div class="btn-group" btnRadioGroup formControlName="newOld">
+                      <label class="btn btn-outline-primary mr-2" btnRadio=1 name='newOld'>New</label>
+                      <label class="btn btn-outline-primary ml-2" btnRadio=2 name='newOld'>Old</label>
+                    </div>
+                  </div>
+
+                  <div class="row mb-4 mt-4">
+                    <div class="form-group col-md-12">
+                      <label for="brand">Brand</label>
+                      <input type="text" class="form-control" formControlName='brand' />
+                      <span class="validation-error" *ngIf="!brand?.valid && (brand?.touched )">
+                        Please provide required information.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="row mb-4">
+                    <div class="form-group col-md-12">
+                      <label for="processor">Type</label>
+                      <select type="text" class="form-control" formControlName='type'>
+                        <option value="1">Desktop</option>
+                        <option value="2">Business Laptop</option>
+                        <option value="3">Gaming Laptop</option>
+                      </select>
+                      <span class="validation-error" *ngIf="!type?.valid && (type?.touched )">
+                        Please provide required information.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="row mb-4">
+                    <div class="form-group col-md-12">
+                      <label for="ram">Used years</label>
+                      <input type="text" class="form-control" formControlName='yearsUsed' />
+                      <span class="validation-error" *ngIf="!yearsUsed?.valid && (yearsUsed?.touched )">
+                        Please provide required information.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="row mb-4">
+                    <div class="form-group col-md-12">
+                      <label for="ram">Price</label>
+                      <input type="text" class="form-control" formControlName='price' />
+                      <span class="validation-error" *ngIf="!price?.valid && (price?.touched )">
+                        Please provide required information.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="form-group col-md-12">
+                      <button class="btn btn-primary" style="margin-right: 10px;" (click)="nextTab(1)">Next</button>
+                    </div>
+                  </div>
+                </tab>
+
+                <tab heading="System Specification" formGroupName="systemSpecs">
+                  <div class="row mb-4 mt-4">
+                    <div class="form-group col-md-12">
+                      <label for="processor">Processor</label>
+                      <input type="text" class="form-control" formControlName='processor' />
+                      <span class="validation-error" *ngIf="!processor?.valid && (processor?.touched )">
+                        Please provide required information.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="row mb-4">
+                    <div class="form-group col-md-12">
+                      <label for="processor">Processor brand</label>
+                      <input type="text" class="form-control" formControlName='processorBrand' />
+                      <span class="validation-error" *ngIf="!processorBrand?.valid && (processorBrand?.touched )">
+                        Please provide required information.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="row mb-4">
+                    <div class="form-group col-md-12">
+                      <label for="processor">Processor Generation</label>
+                      <input type="text" class="form-control" formControlName='processorGen' />
+                      <span class="validation-error" *ngIf="!processorGen?.valid && (processorGen?.touched )">
+                        Please provide required information.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="row mb-4">
+                    <div class="form-group col-md-12">
+                      <label for="processor">RAM</label>
+                      <input type="text" class="form-control" formControlName='ram' />
+                      <span class="validation-error" *ngIf="!ram?.valid && (ram?.touched )">
+                        Please provide required information.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="row mb-4">
+                    <div class="form-group col-md-12">
+                      <label for="processor">Display</label>
+                      <input type="text" class="form-control" formControlName='display' />
+                      <span class="validation-error" *ngIf="!display?.valid && (display?.touched )">
+                        Please provide required information.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="row mb-4">
+                    <div class="form-group col-md-12">
+                      <label for="processor">Graphics Type</label>
+                      <select type="text" class="form-control" formControlName='graphicsType'>
+                        <option value="1">Integrated</option>
+                        <option value="2">Discrete</option>
+                      </select>
+                      <span class="validation-error" *ngIf="!graphicsType?.valid && (graphicsType?.touched )">
+                        Please provide required information.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="row mb-4">
+                    <div class="form-group col-md-12">
+                      <label for="processor">Graphics</label>
+                      <input type="text" class="form-control" formControlName='graphics' />
+                      <span class="validation-error" *ngIf="!graphics?.valid && (graphics?.touched )">
+                        Please provide required information.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="row mb-4">
+                    <div class="form-group col-md-12">
+                      <label for="processor">Storage Type</label>
+                      <select type="text" class="form-control" formControlName='storageType'>
+                        <option value="1">Solid State Drive (SSD)</option>
+                        <option value="2">Hard Disk Drtive (HDD)</option>
+                        <option value="3">Both</option>
+                      </select>
+                      <span class="validation-error" *ngIf="!storageType?.valid && (storageType?.touched )">
+                        Please provide required information.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="row mb-4">
+                    <div class="form-group col-md-12">
+                      <label for="ram">Storage</label>
+                      <input type="text" class="form-control" formControlName='storage' />
+                      <span class="validation-error" *ngIf="!storage?.valid && (storage?.touched )">
+                        Please provide required information.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="form-group col-md-12">
+                      <button class="btn btn-primary" style="margin-right: 10px;" (click)="nextTab(0)">Previous</button>
+                      <button class="btn btn-primary" style="margin-right: 10px;" (click)="nextTab(2)">Next</button>
+                    </div>
+                  </div>
+                </tab>
+
+                <tab heading="Seller Details" formGroupName="sellerDetails">
+
+                  <div class="row mb-4 mt-4">
+                    <div class="form-group col-md-12">
+                      <label for="brand">Seller name</label>
+                      <input type="text" class="form-control" formControlName='sellerName' />
+                      <span class="validation-error" *ngIf="!sellerName?.valid && (sellerName?.touched )">
+                        Please provide required information.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="row mb-4 mt-4">
+                    <div class="form-group col-md-12">
+                      <label for="brand">Seller email</label>
+                      <input type="text" class="form-control" formControlName='sellerEmail' />
+                      <span class="validation-error" *ngIf="!sellerEmail?.valid && (sellerEmail?.touched )">
+                        Please provide required information.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="row mb-4">
+                    <div class="form-group col-md-12">
+                      <label for="ram">Seller phone</label>
+                      <input type="text" class="form-control" formControlName='sellerPhone' />
+                      <span class="validation-error" *ngIf="!sellerPhone?.valid && (sellerPhone?.touched )">
+                        Please provide required information.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="row mb-4">
+                    <div class="form-group col-md-12">
+                      <label for="ram">Seller address</label>
+                      <input type="text" class="form-control" formControlName='sellerAdd' />
+                      <span class="validation-error" *ngIf="!sellerAdd?.valid && (sellerAdd?.touched )">
+                        Please provide required information.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="form-group col-md-12">
+                      <button class="btn btn-primary" style="margin-right: 10px;" (click)="nextTab(1)">Previous</button>
+                      <button class="btn btn-primary" style="margin-right: 10px;" (click)="nextTab(3)">Next</button>
+                    </div>
+                  </div>
+
+                </tab>
+
+                <tab heading="Photos" formGroupName="photos">
+                  <div class="mt-4">
+                    <div class="d-flex justify-content-around">
+                      <div class="photoInputDiv">
+                        <div>
+                          <input type="file" formControlName="photo" class="form-control photoInput" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mt-4">
+                    <div class="form-group col-md-12">
+                      <button class="btn btn-primary" style="margin-right: 10px;" (click)="nextTab(2)">Previous</button>
+                      <button class="btn btn-primary" style="margin-right: 10px;" (click)="formSubmit()">Submit</button>
+                    </div>
+                  </div>
+                </tab>
+
+              </tabset>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header cardHeader">
+          <h2>Your System Preview</h2>
+        </div>
+        <div class="card-body">
+          <app-item-card [system]="previewSystemCard" [hideIcons]="true"></app-item-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

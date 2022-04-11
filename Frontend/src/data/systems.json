@@ -1,0 +1,119 @@
+[
+  {
+    "sysId": "1",
+    "brand": "Dell",
+    "type": 2,
+    "processorBrand": "Intel",
+    "price": "45000",
+    "newOld": "1",
+    "processor": "i5 8th Gen",
+    "ram": "8GB",
+    "display": "15.6"
+  },
+  {
+    "sysId": "2",
+    "brand": "HP",
+    "type": 3,
+    "processorBrand": "AMD",
+    "price": "41000",
+    "newOld": "2",
+    "processor": "Ryzen 5",
+    "ram": "8GB",
+    "display": "15.6",
+    "image": "pic-3.jpg"
+  },
+  {
+    "sysId": "3",
+    "brand": "Asus",
+    "type": 3,
+    "processorBrand": "Intel",
+    "price": "54000",
+    "newOld": "1",
+    "processor": "i5 8th Gen",
+    "ram": "8GB",
+    "display": "15.6",
+    "image": "pic-4.jpg"
+  },
+  {
+    "sysId": "4",
+    "brand": "Lenovo",
+    "type": 1,
+    "processorBrand": "AMD",
+    "price": "32000",
+    "newOld": "1",
+    "processor": "Ryzen 5",
+    "ram": "8GB",
+    "display": "15.6",
+    "image": "pic-5.jpg"
+  },
+  {
+    "sysId": "5",
+    "brand": "Asus",
+    "type": 2,
+    "processorBrand": "Intel",
+    "price": "49000",
+    "newOld": "2",
+    "processor": "i5 8th Gen",
+    "ram": "8GB",
+    "display": "15.6",
+    "image": "pic-6.jpeg"
+  },
+  {
+    "sysId": "6",
+    "brand": "Dell",
+    "type": 2,
+    "processorBrand": "AMD",
+    "price": "40000",
+    "newOld": "1",
+    "processor": "Ryzen 3",
+    "ram": "8GB",
+    "display": "15.6"
+  },
+  {
+    "sysId": "7",
+    "brand": "Lenovo",
+    "type": 3,
+    "processorBrand": "AMD",
+    "price": "62000",
+    "newOld": "2",
+    "processor": "Ryzen 5",
+    "ram": "8GB",
+    "display": "15.6",
+    "image": "pic-7.jpeg"
+  },
+  {
+    "sysId": "8",
+    "brand": "HP",
+    "type": 2,
+    "processorBrand": "Intel",
+    "price": "45000",
+    "newOld": "2",
+    "processor": "i5 8th Gen",
+    "ram": "8GB",
+    "display": "15.6",
+    "image": "pic-8.jpg"
+  },
+  {
+    "sysId": "9",
+    "brand": "Dell",
+    "type": 1,
+    "processorBrand": "AMD",
+    "price": "35000",
+    "newOld": "2",
+    "processor": "Ryzen 5",
+    "ram": "8GB",
+    "display": "15.6",
+    "image": "pic-9.jpg"
+  },
+  {
+    "sysId": "10",
+    "brand": "Lenovo",
+    "type": 2,
+    "processorBrand": "Intel",
+    "price": "55000",
+    "newOld": "1",
+    "processor": "i5 8th Gen",
+    "ram": "8GB",
+    "display": "15.6"
+  }
+]

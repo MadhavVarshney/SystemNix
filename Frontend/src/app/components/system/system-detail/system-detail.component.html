@@ -1,0 +1,12 @@
+<button class="btn btn-primary" (click)="backToList()">Back</button>
+<p>System Id: {{systemId}}</p>
+
+<br>
+<button class="btn btn-primary" (click)="nextPage()">Next Page</button>
+
+<br>
+
+<button class="btn btn-primary" routerLink="/system-detail/1">1</button>
+<button class="btn btn-primary" routerLink="/system-detail/2">2</button>
+<button class="btn btn-primary" routerLink="/system-detail/3">3</button>
+<button class="btn btn-primary" [routerLink]="['/system-detail', '4']">4</button>

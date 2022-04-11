@@ -1,0 +1,40 @@
+<section class="mt-5">
+  <div class="container">
+    <form [formGroup]="listManipultor">
+      <div class="d-flex justify-content-around">
+        <div class="d-flex justify-content-between">
+          <div style="width: 75%; margin-right: 10px;">
+            <input type="text" class="form-control" formControlName="filter" placeholder="Search brand..." />
+          </div>
+          <div style="margin-right: 10px">
+            <button class="btn btn-primary" (click)="onFilterSearch()">Search</button>
+          </div>
+          <div>
+            <button class="btn btn-primary" (click)="onClearSearch()">Clear</button>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between">
+          <div class="d-flex">
+            <div style="min-width: 60px; line-height: 35px;">
+              <label>Sort by: </label>
+            </div>
+            <div style="margin-right: 10px">
+              <select type="text" class="form-control" formControlName="sort" (change)="onSort()">
+                <option value="price">Price</option>
+                <option value="ram">RAM</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <button class="btn btn-primary" (click)="onSortOrder()">Sort</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="row mt-5">
+      <div class="col-md-3" *ngFor="let item of systems | filter: filterValue : 'brand' | sort: [sortValue, sortOrder]">
+        <app-item-card [system]="item"></app-item-card>
+      </div>
+    </div>
+  </div>
+</section>
