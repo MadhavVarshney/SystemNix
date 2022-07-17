@@ -6,6 +6,9 @@ import { System } from 'src/app/modal/System';
 import { HttpServiceService } from 'src/app/services/http-service.service';
 import { ISystemBase } from '../../../modal/ISystem.interface';
 
+import { HttpClient } from '@angular/common/http';
+import { AllConfirmationService } from 'src/app/services/all-confirmation.service';
+
 @Component({
   selector: 'app-item-list',
   templateUrl: './item-list.component.html',
@@ -22,14 +25,16 @@ export class ItemListComponent implements OnInit {
   constructor(
     private httpService: HttpServiceService,
     private activatedRoute: ActivatedRoute,
-    private _fb: FormBuilder
+    private _fb: FormBuilder,
+    private allConfirmService: AllConfirmationService
   ) {
 
    }
 
   ngOnInit(): void {
     this.createForm();
-    this.getData();
+    // this.getData();
+    this.getListing();
   }
 
   get filter(){
@@ -48,25 +53,32 @@ export class ItemListComponent implements OnInit {
     });
   }
 
-  getData(){
-    this.httpService.get('data/systems.json').subscribe(data => {
-      this.systems = data
-      let newSystem = JSON.parse(localStorage.getItem('systems') as string);
-      if(newSystem){
-        newSystem.forEach((element: System) => {
-          element.type = element.type;
-          this.systems.push(element);
-        });
-      }
-      if(this.activatedRoute.snapshot.url.toString()){
-        this.systems = this.systems.filter(x => x.newOld == 2);
-      } else {
-        this.systems = this.systems.filter(x => x.newOld == 1);
-      }
-    }, error => {
-      console.log(error);
-    });
-  }
+  // getData(){
+  //   this.http.get('data/systems.json').subscribe(data => {
+  //     this.systems = data
+  //     let newSystem = JSON.parse(localStorage.getItem('systems') as string);
+  //     if(newSystem){
+  //       newSystem.forEach((element: System) => {
+  //         element.type = element.type;
+  //         this.systems.push(element);
+  //       });
+  //     }
+  //     if(this.activatedRoute.snapshot.url.toString()){
+  //       this.systems = this.systems.filter(x => x.newOld == 2);
+  //     } else {
+  //       this.systems = this.systems.filter(x => x.newOld == 1);
+  //     }
+  //   }, error => {
+  //     console.log(error);
+  //   });
+
+  //   this.http.get(environment.apiURL + "ComputerList/getComputerList").subscribe(data => {
+
+  //   });
+  //   this.http.get(environment.apiURL + "ComputerList/detPage/2").subscribe(data => {
+
+  //   });
+  // }
 
   onFilterSearch(){
     this.filterValue = this.filter.value;
@@ -87,6 +99,13 @@ export class ItemListComponent implements OnInit {
     } else {
       this.sortOrder = 'asc';
     }
+  }
+
+  getListing(){
+    this.allConfirmService.getOrderListing().subscribe((data: any) => {
+      console.log(data);
+    });
+
   }
 
 }

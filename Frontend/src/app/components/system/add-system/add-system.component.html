@@ -211,7 +211,10 @@
                   <div class="row mb-4">
                     <div class="form-group col-md-12">
                       <label for="ram">Seller address</label>
-                      <input type="text" class="form-control" formControlName='sellerAdd' />
+                      <select class="form-control" formControlName='sellerAdd'>
+                        <option value="">--Select--</option>
+                        <option *ngFor="let city of cityList" [value]="city.id">{{city.name}}</option>
+                      </select>
                       <span class="validation-error" *ngIf="!sellerAdd?.valid && (sellerAdd?.touched )">
                         Please provide required information.
                       </span>

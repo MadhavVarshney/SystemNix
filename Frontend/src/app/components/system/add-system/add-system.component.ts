@@ -39,6 +39,7 @@ export class AddSystemComponent implements OnInit {
   imageUpdate: any;
   isNextButtonClicked: boolean = false;
   system = new System();
+  cityList: any = [];
 
   constructor(
     private _fb: FormBuilder,
@@ -48,6 +49,7 @@ export class AddSystemComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getCityList();
     this.createFormControls();
     this.updateCardPreview();
   }
@@ -180,6 +182,12 @@ export class AddSystemComponent implements OnInit {
     return this.sellerDetails.get('sellerAdd');
   }
   /////////////////////////////////////
+
+  getCityList(){
+    this.systemService.getCityList('http://localhost:3258/api/city').subscribe(data => {
+      this.cityList = data;
+    });
+  }
 
   //Update Card preview /////////////////////////////
   updateCardPreview(){

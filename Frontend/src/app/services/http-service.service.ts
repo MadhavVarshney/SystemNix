@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators'
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class HttpServiceService {
   ) { }
 
   public get(url: string){
-    return this.http.get<any>(url);
+    return this.http.get<any>(environment.apiURL + url);
     // .pipe(
     //   map( data => {
     //     const systems: Array<ISystem> = [];

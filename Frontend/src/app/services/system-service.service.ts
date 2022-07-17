@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { System } from '../modal/System';
+import { HttpServiceService } from './http-service.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SystemServiceService {
 
-  constructor() { }
+  constructor(
+    private httpService: HttpServiceService,
+  ) { }
 
   saveSystem(system: System){
     let systems = [];
@@ -26,5 +29,9 @@ export class SystemServiceService {
       localStorage.setItem('SID', '101');
       return 101;
     }
+  }
+
+  getCityList(url: string){
+    return this.httpService.get(url);
   }
 }

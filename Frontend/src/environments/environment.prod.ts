@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  instanceURL: "systemnixqa.com",
+  apiURL: "systemnixqaapi.com/api/"
 };

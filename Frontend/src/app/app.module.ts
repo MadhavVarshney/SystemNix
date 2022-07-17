@@ -19,6 +19,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { FilterPipe } from './pipes/filter.pipe';
 import { SortPipe } from './pipes/sort.pipe';
+import { HttpServiceService } from './services/http-service.service';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,7 @@ import { SortPipe } from './pipes/sort.pipe';
     TabsModule.forRoot(),
     ButtonsModule.forRoot()
   ],
-  providers: [],
+  providers: [HttpServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
